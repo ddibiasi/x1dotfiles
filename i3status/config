@@ -1,0 +1,92 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+# Unfortunately Github can't display the icons (), but they should work nevertheless
+
+py3status {
+    nagbar_font = 'Droid Sans Mono 11'
+}
+
+general {
+        colors = true
+        interval = 5
+}
+
+#order += "disk /"
+order += "sysdata"
+order += "volume master"
+#order += "wireless _first_"
+order += "battery all"
+#order += "cpu_temperature 0"
+#order += "lm_sensors"
+order += "cpu_usage"
+order += "tztime local"
+#order += "mem"
+
+
+wireless _first_ {
+        format_up = "(%essid - %quality) %ip"
+        format_down = "down"
+}
+
+
+lm_sensors {
+	format_chip='{format_sensor}'
+	format_sensor = '[\?if=name=temp1 🌡 ]'
+	format_sensor += '[\?color=auto.input {input}°C]'
+	chips=['nct6779-isa-0290']
+	sensors = ['temp1'] 
+}
+
+volume master {
+        format = "🔊 %volume"
+        format_muted = "🔈 (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+        status_bat = "B"
+        status_chr = "🗲"
+        status_full = "✔️"
+        low_threshold = 30
+        threshold_type = percentage
+        integer_battery_capacity = true
+        color_good = "#0000FF"
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+tztime local {
+        format = "🗓️ %d.%m.%y %I:%M:%S"
+	on_click 1 = "exec minetime"
+}
+
+cpu_usage {
+        format = "🏋️ %usage"
+}
+
+cpu_temperature 0 {
+	format = " ± %degrees°"
+	path = "/sys/devices/platform/coretemp.0/temp2_input"
+	max_threshold = 95
+}
+
+disk "/" {
+        format = "🖴 %avail"
+	on_click 1 = "exec thunar"
+}
+
+sysdata {
+        format = "🖴 {mem_used} / {mem_total} {mem_total_unit}"
+        on_click 1 = "exec thunar"
+}
