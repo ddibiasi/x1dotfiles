@@ -191,6 +191,7 @@ bar {
         }
 }
 
+
 #exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id libinput-gestures-setup start 
