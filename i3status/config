@@ -9,7 +9,7 @@
 # Unfortunately Github can't display the icons (), but they should work nevertheless
 
 py3status {
-    nagbar_font = 'Droid Sans Mono 11'
+    nagbar_font = 'InconsolataGo Nerd Font Mono 11'
 }
 
 general {
@@ -54,7 +54,7 @@ volume master {
 battery all {
         format = "%status %percentage %remaining"
         status_bat = "B"
-        status_chr = "🗲"
+        status_chr = ""
         status_full = "✔️"
         low_threshold = 30
         threshold_type = percentage
@@ -72,7 +72,7 @@ tztime local {
 }
 
 cpu_usage {
-        format = "🏋️ %usage"
+        format = "⏳%usage"
 }
 
 cpu_temperature 0 {
