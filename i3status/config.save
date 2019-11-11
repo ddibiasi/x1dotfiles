@@ -83,10 +83,10 @@ cpu_temperature 0 {
 
 disk "/" {
         format = "🖴 %avail"
-	on_click 1 = "exec alacritty -e nnn"
+	on_click 1 = "exec thunar"
 }
 
 sysdata {
         format = "🖴 {mem_used} / {mem_total} {mem_total_unit}"
-        on_click 1 = "exec alacritty -e nnn"
+        on_click 1 = "exec thunar"
 }

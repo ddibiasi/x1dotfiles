@@ -165,10 +165,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  bground text    indicator child_border
-client.focused          #2F343A #A84848 #FFFFFF #783048   #301830
-client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
-client.unfocused        #333333 #222222 #888888 #292D2E   #222222
-client.urgent           #D84848 #900000 #FFFFFF #900000   #900000
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #FFFFFF
@@ -176,19 +172,17 @@ client.background       #FFFFFF
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        position top
+  position top
         status_command py3status
-        colors {
-                background #000000
-                statusline #FFFFFF
-                separator  #666666
-
-                focused_workspace  #2F343A #A84848 #FFFFFF
-                active_workspace   #333333 #222222 #FFFFFF
-                inactive_workspace #333333 #222222 #888888
-                urgent_workspace   #D84848 #783048 #FFFFFF
-                binding_mode       #2F343A #783048 #FFFFFF
-        }
+  colors {
+    separator #969896
+    background #1d1f21
+    statusline #c5c8c6
+    focused_workspace #81a2be #81a2be #1d1f21
+    active_workspace #373b41 #373b41 #ffffff
+    inactive_workspace #282a2e #282a2e #969896
+    urgent_workspace #cc6666 #cc6666 #ffffff
+  }
 }
 
 
@@ -235,3 +229,7 @@ bindsym XF86AudioMute        exec i3-volume -mny -t $statuscmd -u $statussig
 
 ## END VOLUME NOTIFICATION
 
+client.focused #81a2be #81a2be #1d1f21 #282a2e
+client.focused_inactive #373b41 #373b41 #969896 #282a2e
+client.unfocused #282a2e #282a2e #969896 #282a2e
+client.urgent #373b41 #cc6666 #ffffff #cc6666

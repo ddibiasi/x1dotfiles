@@ -1,5 +1,7 @@
 export ZSH=/usr/share/oh-my-zsh
 export WINIT_HIDPI_FACTOR=1
+export VISUAL=nano
+export EDITOR=nano
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
