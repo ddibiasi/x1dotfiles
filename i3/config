@@ -192,6 +192,7 @@ exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id flameshot
+exec --no-startup-id minetime --hidden
 #exec --no-startup-id brightnessctl --device='tpacpi::kbd_backlight' set 2 
 
 ## START VOLUME NOTIFICATION
